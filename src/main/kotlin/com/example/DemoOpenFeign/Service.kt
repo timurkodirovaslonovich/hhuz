@@ -13,7 +13,7 @@ class VacancySyncService(
     private val areaRepository: AreaRepository
 ) {
     private val logger = LoggerFactory.getLogger(VacancySyncService::class.java)
-
+    //bu yerda hard code qilingan keyword dynamic input orqali olinmagan
     @Scheduled(fixedRate = 15 * 60 * 1000)
     @Transactional
     fun syncVacancies() {
