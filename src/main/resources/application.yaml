@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: DemoOpenFeign
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hhuz
+    username: admin
+    password: timur20030304
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Server configuration
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
+
+# Swagger configuration
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+
+telegram:
+  bot:
+    token: "8479546329:AAHPlpV3pyP6RHLz6ThtFd-jxSw3DgNmxow"
+    username: "hhuzfetcher_bot"
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login with Telegram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        h1 { color: #333; margin-bottom: 30px; }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🔐 Login with Telegram</h1>
+
+    <div th:if="${param.error}" class="error">
+        Authentication failed. Please try again.
+    </div>
+
+
+    <script async
+            src="https://telegram.org/js/telegram-widget.js?22"
+            th:attr="data-telegram-login=${botUsername}"
+            data-size="large"
+            data-radius="10"
+            data-auth-url=" https://velda-overfamed-kristan.ngrok-free.dev/auth/telegram/callback"
+            data-request-access="write">
+    </script>
+</div>
+</body>
+</html>

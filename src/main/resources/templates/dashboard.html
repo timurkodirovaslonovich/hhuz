@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .user-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        img { border-radius: 50%; }
+        .logout-btn {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="user-card">
+    <h1>Welcome, <span th:text="${firstName}"></span>!</h1>
+
+    <img th:if="${photoUrl}" th:src="${photoUrl}" width="100" alt="Profile">
+
+    <p><strong>Username:</strong> @<span th:text="${username}"></span></p>
+
+    <a href="/auth/telegram/logout" class="logout-btn">Logout</a>
+</div>
+</body>
+</html>
